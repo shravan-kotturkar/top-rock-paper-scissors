@@ -8,9 +8,22 @@ function getComputerChoice() {
     return compChoice[random];
 }
 
-console.log(getComputerChoice());
+function getUserChoice() {
+    let userChoice = prompt('Choose Rock Paper or Scissors and key it in: ');
+    userChoice = userChoice.toLowerCase();
+    return userChoice;
+}
+
+console.log(getUserChoice());
 
 //function playRound() to play a round of R P S
+
+//function playRound(playerSelection, computerSelection) {
+
+//}
+
+//console.log(playRound(getPlayerChoice(), getComputerChoice()));
+
     //takes 2 parameters playerSelection and computerSelection
     //use prompt() to get user input
     //returns the winner with message
