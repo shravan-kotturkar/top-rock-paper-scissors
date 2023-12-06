@@ -8,21 +8,70 @@ function getComputerChoice() {
     return compChoice[random];
 }
 
-function getUserChoice() {
-    let userChoice = prompt('Choose Rock Paper or Scissors and key it in: ');
-    userChoice = userChoice.toLowerCase();
-    return userChoice;
+//function getUserChoice() to get user input
+
+function getPlayerChoice() {
+    let playerChoice = prompt('Choose Rock Paper or Scissors and key it in: ');
+    playerChoice = playerChoice.toLowerCase();
+    return playerChoice;
 }
 
-console.log(getUserChoice());
+
 
 //function playRound() to play a round of R P S
+let scorep = 0;
+let scorec = 0;
 
-//function playRound(playerSelection, computerSelection) {
+function playRound(playerSelection, computerSelection) {
+    if (playerSelection == computerSelection) {
+        alert ('TIE');
+        return;
+    }
+    else if ((playerSelection != 'rock') && (playerSelection != 'paper') && (playerSelection != 'scissors')) {
+        alert ('Wrong entry! You lose this round')
+    }
+    else if ((playerSelection == 'paper' && computerSelection == 'rock')) {
+        alert ('You win this round! Paper beats Rock');
+        ++scorep;       
+    }
+    else if ((playerSelection == 'scissors' && computerSelection == 'paper')) {
+        alert ('You win this round! Scissors beats Paper');
+        ++scorep;
+    }
+    else if ((playerSelection == 'rock' && computerSelection == 'scissors')) {
+        alert ('You win this round! Rock beats Scissors');
+        ++scorep;
+    }
+    else if ((playerSelection == 'rock' && computerSelection == 'paper')) {
+        alert ('You lose this round! Paper beats Rock');
+        ++scorec;
+    }
+    else if ((playerSelection == 'paper' && computerSelection == 'scissors')) {
+        alert ('You lose this round! Scissors beats Paper');
+        ++scorec;
+    }
+    else if ((playerSelection == 'scissors' && computerSelection == 'rock')) {
+        alert ('You lose this round! Rock beats Scissors');
+        ++scorec;
+    }
+}
 
-//}
+function game() {
+    for (let i = 0; i < 5; i++)
+    {
+        playRound(getPlayerChoice(), getComputerChoice());   
+    }
+    if (scorep > scorec)
+    {
+        alert ('You Won the game. Congrats!');
+    }
+    else
+    {
+        alert ('You Lost the game. Better Luck Next Time.');
+    }
+}
 
-//console.log(playRound(getPlayerChoice(), getComputerChoice()));
+console.log(game());
 
     //takes 2 parameters playerSelection and computerSelection
     //use prompt() to get user input
