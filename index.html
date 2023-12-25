@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Rock Paper Scissors</title>
+    <link href="styles.css" rel="stylesheet">
+</head>
+
+<body class="rps">
+    <div>
+        <h1> Play Against the Computer</h1>
+        <h2> Whoever makes it to 5 points first, Wins the Game</h2>
+    </div>
+    <div>
+        <h3> Click on Rock, Paper or Scissors</h3>
+        <div>
+            <button class="rock">
+                ROCK
+                <br><br>
+                <br><br>
+                <img src="images/rock.png">
+                <br><br>
+                <br><br>
+                <br><br>
+                <br><br>
+                <br>
+            </button>
+            <button class="paper">
+                PAPER
+                <br><br>
+                <img src="images/paper.png">
+                <br><br>
+                <br><br>
+            </button>
+            <button class="scissors">
+                SCISSORS
+                <br><br>
+                <img src="images/scissors.png">
+                <br>
+            </button>
+        </div>
+    </div>
+    <br>
+    <table>
+        <tr>
+            <td><h2>Computer's Score</h2></td>
+            <td><h2>Your Score</h2></td>
+        </tr>
+        <tr>
+            <td id="compScore">0</td>
+            <td id="yourScore">0</td>
+        </tr>
+    </table>
+    <h2 class="roundResult"></h2>
+    <h2 class="finalResult"></h2>
+    <script src="rps.js"></script>
+</body>
+
+</html>
